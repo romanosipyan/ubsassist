@@ -3,26 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{356A4EE2-684F-461A-94E0-323782163FF8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QnAMaker", "QnAMaker", "{ACBCF350-DC7A-4F19-A83F-ADB08F5A8778}"
-	ProjectSection(SolutionItems) = preProject
-		Samples\QnAMaker\README.md = Samples\QnAMaker\README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{F8F3BE81-DC5E-4F9A-ACAA-18C3BF1409BB}"
-	ProjectSection(SolutionItems) = preProject
-		Library\Microsoft.Bot.Builder.CognitiveServices.nuspec = Library\Microsoft.Bot.Builder.CognitiveServices.nuspec
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleQnABot", "Samples\QnAMaker\SimpleQnABot\SimpleQnABot.csproj", "{1018F341-F0CF-40A6-8CFB-44FB9367C91A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleQnABot", "QuestionAnswerBot\SimpleQnABot.csproj", "{1018F341-F0CF-40A6-8CFB-44FB9367C91A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{CBFE0D35-D6C2-4B25-A498-CFC474A2C3A5} = {CBFE0D35-D6C2-4B25-A498-CFC474A2C3A5}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Bot.Builder.CognitiveServices.LuisActionBinding", "Library\LuisActionBinding\Microsoft.Bot.Builder.CognitiveServices.LuisActionBinding.csproj", "{ABDF486D-CBF1-43A7-9044-CA46B5AB2A88}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Bot.Builder.CognitiveServices.QnAMaker", "Library\QnAMaker\Microsoft.Bot.Builder.CognitiveServices.QnAMaker.csproj", "{CBFE0D35-D6C2-4B25-A498-CFC474A2C3A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Bot.Builder.CognitiveServices.QnAMaker", "BotEngine\Microsoft.Bot.Builder.CognitiveServices.QnAMaker.csproj", "{CBFE0D35-D6C2-4B25-A498-CFC474A2C3A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +20,6 @@ Global
 		{1018F341-F0CF-40A6-8CFB-44FB9367C91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1018F341-F0CF-40A6-8CFB-44FB9367C91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1018F341-F0CF-40A6-8CFB-44FB9367C91A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ABDF486D-CBF1-43A7-9044-CA46B5AB2A88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABDF486D-CBF1-43A7-9044-CA46B5AB2A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ABDF486D-CBF1-43A7-9044-CA46B5AB2A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ABDF486D-CBF1-43A7-9044-CA46B5AB2A88}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBFE0D35-D6C2-4B25-A498-CFC474A2C3A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CBFE0D35-D6C2-4B25-A498-CFC474A2C3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBFE0D35-D6C2-4B25-A498-CFC474A2C3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,11 +27,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{ACBCF350-DC7A-4F19-A83F-ADB08F5A8778} = {356A4EE2-684F-461A-94E0-323782163FF8}
-		{1018F341-F0CF-40A6-8CFB-44FB9367C91A} = {ACBCF350-DC7A-4F19-A83F-ADB08F5A8778}
-		{ABDF486D-CBF1-43A7-9044-CA46B5AB2A88} = {F8F3BE81-DC5E-4F9A-ACAA-18C3BF1409BB}
-		{CBFE0D35-D6C2-4B25-A498-CFC474A2C3A5} = {F8F3BE81-DC5E-4F9A-ACAA-18C3BF1409BB}
 	EndGlobalSection
 EndGlobal
