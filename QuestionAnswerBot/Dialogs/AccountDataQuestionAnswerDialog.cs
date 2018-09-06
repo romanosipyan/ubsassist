@@ -1,5 +1,8 @@
 ﻿using System;
 using Microsoft.Bot.Builder.CognitiveServices.QnAMaker;
+using System.Threading.Tasks;
+using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Connector;
 
 namespace Haskathon.QuestionAnswerBot.Controllers.Dialogs
 {
@@ -10,6 +13,11 @@ namespace Haskathon.QuestionAnswerBot.Controllers.Dialogs
 		public AccountDataQuestionAnswerDialog()
 		{
 			WelcomeMessage = "What do you need to know regarding your account?";
+		}
+
+		protected override async Task DefaultWaitNextMessageAsync(IDialogContext context, IMessageActivity message, QnAMakerResults result)
+		{
+			await context.PostAsync("Anything else?");
 		}
 	}
 }
