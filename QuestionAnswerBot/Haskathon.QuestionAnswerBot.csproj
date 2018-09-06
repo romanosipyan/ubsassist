@@ -159,7 +159,9 @@
   <ItemGroup>
     <Compile Include="AppStart\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
-    <Compile Include="Dialogs\SimpleQuestionAnswerDialog.cs" />
+    <Compile Include="Dialogs\AccountDataQuestionAnswerDialog.cs" />
+    <Compile Include="Dialogs\PromptOptionsDialog.cs" />
+    <Compile Include="Dialogs\AssistQuestionAnswerDialog.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

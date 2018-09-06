@@ -5,6 +5,7 @@ using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using Haskathon.QuestionAnswerBot.Controllers.Dialogs;
+using Haskathon.QuestionAnswerBot.Dialogs;
 
 namespace Haskathon.QuestionAnswerBot.Controllers
 {
@@ -19,7 +20,7 @@ namespace Haskathon.QuestionAnswerBot.Controllers
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new SimpleQuestionAnswerDialog());
+                await Conversation.SendAsync(activity, () => new PromptButtonsDialog());
             }
             else
             {
