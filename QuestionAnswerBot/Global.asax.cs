@@ -1,4 +1,4 @@
-﻿namespace SimpleQnABot
+﻿namespace Haskathon.QuestionAnswerBot
 {
 	using System.Reflection;
 	using System.Web.Http;
