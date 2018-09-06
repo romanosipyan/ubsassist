@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace Haskathon.QuestionAnswerBot.Dialogs
 {
 	[Serializable]
-	//This is actually Root Dialog of this bot, but I named PromptButtons Dialog becuase I want to set similar name in node.js sample.
 	public class PromptButtonsDialog : IDialog<object>
 	{
 		private const string AssistOption = "UBS Assist";
@@ -16,35 +15,31 @@ namespace Haskathon.QuestionAnswerBot.Dialogs
 
 		public async Task StartAsync(IDialogContext context)
 		{
-			context.Wait(this.MessageRecievedAsync);
+			context.Wait(MessageRecievedAsync);
 		}
 
 		public virtual async Task MessageRecievedAsync(IDialogContext context, IAwaitable<IMessageActivity> result)
 		{
-			//Show options whatever users chat
-			PromptDialog.Choice(context, this.AfterMenuSelection, new List<string>() { AssistOption, AccountDetailsOption }, "What kind of information do you need?");
+			PromptDialog.Choice(context, AfterMenuSelection, new List<string>() { AssistOption, AccountDetailsOption }, "What kind of information do you need?");
 		}
 
-		//After users select option, Bot call other dialogs
 		private async Task AfterMenuSelection(IDialogContext context, IAwaitable<string> result)
 		{
 			var optionSelected = await result;
 			switch (optionSelected)
 			{
 				case AssistOption:
-					context.Call(new SimpleQuestionAnswerDialog(), ResumeAfterOptionDialog);
+					context.Call(new AssistQuestionAnswerDialog(), ResumeAfterOptionDialog);
 					break;
 				case AccountDetailsOption:
-					context.Call(new SimpleQuestionAnswerDialog(), ResumeAfterOptionDialog);
+					context.Call(new AccountDataQuestionAnswerDialog(), ResumeAfterOptionDialog);
 					break;
 			}
 
 		}
 
-		//This function is called after each dialog process is done
 		private async Task ResumeAfterOptionDialog(IDialogContext context, IAwaitable<object> result)
 		{
-			//This means  MessageRecievedAsync function of this dialog (PromptButtonsDialog) will receive users' messeges
 			context.Wait(MessageRecievedAsync);
 		}
 	}

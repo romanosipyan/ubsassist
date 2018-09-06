@@ -42,43 +42,47 @@ using System.Linq;
 
 namespace Microsoft.Bot.Builder.CognitiveServices.QnAMaker
 {
-    /// <summary>
-    /// A dialog specialized to handle QnA response from QnA Maker.
-    /// </summary>
-    [Serializable]
-    public class QnAMakerDialog : IDialog<IMessageActivity>
-    {
-        protected readonly IQnAService[] services;
-        private QnAMakerResults qnaMakerResults;
-        private FeedbackRecord feedbackRecord;
-        private const double QnAMakerHighConfidenceScoreThreshold = 0.99;
-        private const double QnAMakerHighConfidenceDeltaThreshold = 0.20;
+	/// <summary>
+	/// A dialog specialized to handle QnA response from QnA Maker.
+	/// </summary>
+	[Serializable]
+	public class QnAMakerDialog : IDialog<IMessageActivity>
+	{
+		protected readonly IQnAService[] services;
+		private QnAMakerResults qnaMakerResults;
+		private FeedbackRecord feedbackRecord;
+		private const double QnAMakerHighConfidenceScoreThreshold = 0.99;
+		private const double QnAMakerHighConfidenceDeltaThreshold = 0.20;
 
-        public IQnAService[] MakeServicesFromAttributes()
-        {
-            var type = this.GetType();
-            var qnaModels = type.GetCustomAttributes<QnAMakerAttribute>(inherit: true);
-            return qnaModels.Select(m => new QnAMakerService(m)).Cast<IQnAService>().ToArray();
-        }
+		public IQnAService[] MakeServicesFromAttributes()
+		{
+			var type = this.GetType();
+			var qnaModels = type.GetCustomAttributes<QnAMakerAttribute>(inherit: true);
+			return qnaModels.Select(m => new QnAMakerService(m)).Cast<IQnAService>().ToArray();
+		}
 
-        /// <summary>
-        /// Construct the QnA Service dialog.
-        /// </summary>
-        /// <param name="services">The QnA service.</param>
-        public QnAMakerDialog(params IQnAService[] services)
-        {
-            if (services.Length == 0)
-            {
-                services = MakeServicesFromAttributes();
-            }
+		/// <summary>
+		/// Construct the QnA Service dialog.
+		/// </summary>
+		/// <param name="services">The QnA service.</param>
+		public QnAMakerDialog(params IQnAService[] services)
+		{
+			if (services.Length == 0)
+			{
+				services = MakeServicesFromAttributes();
+			}
 
-            SetField.NotNull(out this.services, nameof(services), services);
-        }
+			SetField.NotNull(out this.services, nameof(services), services);
+		}
 
-        async Task IDialog<IMessageActivity>.StartAsync(IDialogContext context)
-        {
-            context.Wait(MessageReceivedAsync);
-        }
+		async Task IDialog<IMessageActivity>.StartAsync(IDialogContext context)
+		{
+			await context.PostAsync(WelcomeMessage);
+
+			context.Wait(MessageReceivedAsync);
+		}
+
+		protected virtual string WelcomeMessage { get;set; }
 
         public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
         {
