@@ -184,11 +184,11 @@ namespace Microsoft.Bot.Builder.CognitiveServices.QnAMaker
         protected virtual async Task QnAFeedbackStepAsync(IDialogContext context, QnAMakerResults qnaMakerResults)
         {
             var qnaList = qnaMakerResults.Answers;
-            var questions = qnaList.Select(x => x.Questions[0]).Concat(new[] {Resource.Resource.noneOfTheAboveOption}).ToArray();
+            var questions = qnaList.Select(x => x.Questions[0]).Concat(new[] { Haskathon.BotEngine.Resource.Resource.noneOfTheAboveOption}).ToArray();
 
             PromptOptions<string> promptOptions = new PromptOptions<string>(
-                prompt: Resource.Resource.answerSelectionPrompt,
-                tooManyAttempts: Resource.Resource.tooManyAttempts,
+                prompt: Haskathon.BotEngine.Resource.Resource.answerSelectionPrompt,
+                tooManyAttempts: Haskathon.BotEngine.Resource.Resource.tooManyAttempts,
                 options: questions,
                 attempts: 0);
 

@@ -85,7 +85,7 @@ namespace Microsoft.Bot.Builder.CognitiveServices.QnAMaker
         {
             if (string.IsNullOrEmpty(defaultMessage))
             {
-                defaultMessage = Resource.Resource.defaultMessage;
+                defaultMessage = Haskathon.BotEngine.Resource.Resource.defaultMessage;
             }
 
             SetField.NotNull(out this.AuthKey, nameof(authKey), authKey);

@@ -3,12 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleQnABot", "QuestionAnswerBot\SimpleQnABot.csproj", "{1018F341-F0CF-40A6-8CFB-44FB9367C91A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haskathon.QuestionAnswerBot", "QuestionAnswerBot\Haskathon.QuestionAnswerBot.csproj", "{1018F341-F0CF-40A6-8CFB-44FB9367C91A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{CBFE0D35-D6C2-4B25-A498-CFC474A2C3A5} = {CBFE0D35-D6C2-4B25-A498-CFC474A2C3A5}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Bot.Builder.CognitiveServices.QnAMaker", "BotEngine\Microsoft.Bot.Builder.CognitiveServices.QnAMaker.csproj", "{CBFE0D35-D6C2-4B25-A498-CFC474A2C3A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haskathon.BotEngine", "BotEngine\Haskathon.BotEngine.csproj", "{CBFE0D35-D6C2-4B25-A498-CFC474A2C3A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

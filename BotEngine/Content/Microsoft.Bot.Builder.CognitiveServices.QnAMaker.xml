@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Microsoft.Bot.Builder.CognitiveServices.QnAMaker</name>
+        <name>Haskathon.BotEngine</name>
     </assembly>
     <members>
         <member name="T:Microsoft.Bot.Builder.CognitiveServices.QnAMaker.QnAMakerDialog">
@@ -170,38 +170,38 @@
             <param name="text">The query text.</param>
             <returns>The QnA result.</returns>
         </member>
-        <member name="T:Microsoft.Bot.Builder.CognitiveServices.QnAMaker.Resource.Resource">
+        <member name="T:Haskathon.BotEngine.Resource.Resource">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:Microsoft.Bot.Builder.CognitiveServices.QnAMaker.Resource.Resource.ResourceManager">
+        <member name="P:Haskathon.BotEngine.Resource.Resource.ResourceManager">
             <summary>
               Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:Microsoft.Bot.Builder.CognitiveServices.QnAMaker.Resource.Resource.Culture">
+        <member name="P:Haskathon.BotEngine.Resource.Resource.Culture">
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:Microsoft.Bot.Builder.CognitiveServices.QnAMaker.Resource.Resource.answerSelectionPrompt">
+        <member name="P:Haskathon.BotEngine.Resource.Resource.answerSelectionPrompt">
             <summary>
               Looks up a localized string similar to Did you mean:.
             </summary>
         </member>
-        <member name="P:Microsoft.Bot.Builder.CognitiveServices.QnAMaker.Resource.Resource.defaultMessage">
+        <member name="P:Haskathon.BotEngine.Resource.Resource.defaultMessage">
             <summary>
               Looks up a localized string similar to No match found!.
             </summary>
         </member>
-        <member name="P:Microsoft.Bot.Builder.CognitiveServices.QnAMaker.Resource.Resource.noneOfTheAboveOption">
+        <member name="P:Haskathon.BotEngine.Resource.Resource.noneOfTheAboveOption">
             <summary>
               Looks up a localized string similar to None of the above..
             </summary>
         </member>
-        <member name="P:Microsoft.Bot.Builder.CognitiveServices.QnAMaker.Resource.Resource.tooManyAttempts">
+        <member name="P:Haskathon.BotEngine.Resource.Resource.tooManyAttempts">
             <summary>
               Looks up a localized string similar to Sorry! Not able to match any of the options..
             </summary>

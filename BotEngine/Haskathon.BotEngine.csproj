@@ -7,8 +7,8 @@
     <ProjectGuid>{CBFE0D35-D6C2-4B25-A498-CFC474A2C3A5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Bot.Builder.CognitiveServices.QnAMaker</RootNamespace>
-    <AssemblyName>Microsoft.Bot.Builder.CognitiveServices.QnAMaker</AssemblyName>
+    <RootNamespace>Haskathon.BotEngine</RootNamespace>
+    <AssemblyName>Haskathon.BotEngine</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

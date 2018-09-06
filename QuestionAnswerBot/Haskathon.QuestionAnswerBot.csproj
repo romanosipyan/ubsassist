@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleQnABot</RootNamespace>
-    <AssemblyName>Bot Application</AssemblyName>
+    <RootNamespace>Haskathon.QuestionAnswerBot</RootNamespace>
+    <AssemblyName>Haskathon.QuestionAnswerBot</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -175,9 +175,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BotEngine\Microsoft.Bot.Builder.CognitiveServices.QnAMaker.csproj">
+    <ProjectReference Include="..\BotEngine\Haskathon.BotEngine.csproj">
       <Project>{cbfe0d35-d6c2-4b25-a498-cfc474a2c3a5}</Project>
-      <Name>Microsoft.Bot.Builder.CognitiveServices.QnAMaker</Name>
+      <Name>Haskathon.BotEngine</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
