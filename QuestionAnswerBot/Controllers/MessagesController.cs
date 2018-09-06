@@ -18,7 +18,7 @@ namespace SimpleQnABot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.SimpleQnADialog());
+                await Conversation.SendAsync(activity, () => new Dialogs.SimpleQuestionAnswerDialog());
             }
             else
             {

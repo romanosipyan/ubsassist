@@ -39,7 +39,6 @@ using Microsoft.Bot.Connector;
 using Microsoft.Bot.Builder.Internals.Fibers;
 using System.Reflection;
 using System.Linq;
-using System.Web;
 
 namespace Microsoft.Bot.Builder.CognitiveServices.QnAMaker
 {
