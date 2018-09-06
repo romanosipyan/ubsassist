@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace SimpleQnABot
+namespace Haskathon.QuestionAnswerBot.AppStart
 {
     public static class WebApiConfig
     {
