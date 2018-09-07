@@ -44,9 +44,11 @@ namespace Haskathon.QuestionAnswerBot.Dialogs
 
 		private async Task ResumeAfterOptionDialog(IDialogContext context, IAwaitable<object> result)
 		{
-			context.Wait(MessageRecievedAsync);
-
-			await context.PostAsync("Please select an option");
+			PromptDialog.Choice(
+				context,
+				AfterMenuSelection,
+				new List<string>() { AssistOption, AccountDetailsOption },
+				"What kind of information do you need?");
 		}
 	}
 }
