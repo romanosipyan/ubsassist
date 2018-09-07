@@ -20,7 +20,11 @@ namespace Haskathon.QuestionAnswerBot.Dialogs
 
 		public virtual async Task MessageRecievedAsync(IDialogContext context, IAwaitable<IMessageActivity> result)
 		{
-			PromptDialog.Choice(context, AfterMenuSelection, new List<string>() { AssistOption, AccountDetailsOption }, "What kind of information do you need?");
+			PromptDialog.Choice(
+				context, 
+				AfterMenuSelection, 
+				new List<string>() { AssistOption, AccountDetailsOption }, 
+				"What kind of information do you need?");
 		}
 
 		private async Task AfterMenuSelection(IDialogContext context, IAwaitable<string> result)
@@ -31,16 +35,20 @@ namespace Haskathon.QuestionAnswerBot.Dialogs
 				case AssistOption:
 					context.Call(new AssistQuestionAnswerDialog(), ResumeAfterOptionDialog);
 					break;
+
 				case AccountDetailsOption:
 					context.Call(new AccountDataQuestionAnswerDialog(), ResumeAfterOptionDialog);
 					break;
 			}
-
 		}
 
 		private async Task ResumeAfterOptionDialog(IDialogContext context, IAwaitable<object> result)
 		{
-			context.Wait(MessageRecievedAsync);
+			PromptDialog.Choice(
+				context,
+				AfterMenuSelection,
+				new List<string>() { AssistOption, AccountDetailsOption },
+				"What kind of information do you need?");
 		}
 	}
 }
