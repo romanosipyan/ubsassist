@@ -84,13 +84,19 @@ namespace Microsoft.Bot.Builder.CognitiveServices.QnAMaker
 
 		protected virtual string WelcomeMessage { get;set; }
 
-        public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
+        public virtual async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
         {
             var message = await argument;
-            
+
             if (message != null && !string.IsNullOrEmpty(message.Text))
             {
-                var tasks = this.services.Select(s => s.QueryServiceAsync(message.Text)).ToArray();
+				if (message.Text.ToLower().Contains("go back"))
+				{
+					context.Done(true);
+					return;
+				}
+
+				var tasks = this.services.Select(s => s.QueryServiceAsync(message.Text)).ToArray();
                 await Task.WhenAll(tasks);
 
                 if (tasks.Any())

@@ -15,9 +15,17 @@ namespace Haskathon.QuestionAnswerBot.Controllers.Dialogs
 			WelcomeMessage = "Can I look for something for you in UBS Assist?";
 		}
 
+		public override async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
+		{
+			await base.MessageReceivedAsync(context, argument);
+		}
+
 		protected override async Task DefaultWaitNextMessageAsync(IDialogContext context, IMessageActivity message, QnAMakerResults result)
 		{
 			await context.PostAsync("Anything else?");
+
+			// Calling this will move back to previous dialog
+			// context.Done(true);
 		}
 	}
 }
